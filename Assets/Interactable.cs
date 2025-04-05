@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public enum Type
     {
-        
+        StartLevel1,
+        StartLevel2,
+        EndLevel,
+        Collectible,
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Type type;
 }
