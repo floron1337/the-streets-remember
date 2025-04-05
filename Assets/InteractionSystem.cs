@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InteractionSystem : MonoBehaviour
 {
@@ -18,7 +19,14 @@ public class InteractionSystem : MonoBehaviour
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
                 if (interactable != null)
                 {
-                    Debug.Log("Interacting with " + interactable.name);
+                    if(interactable.type == Interactable.Type.StartLevel1)
+                    {
+                        SceneManager.LoadScene("Heist");
+                    }
+                    else if(interactable.type == Interactable.Type.StartLevel2)
+                    {
+                        SceneManager.LoadScene("Chase");
+                    }
                 }
             }
         }
